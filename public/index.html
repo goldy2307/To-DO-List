@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>My Tasks</h1>
+  <div class="form-box">
+    <label>Task</label>
+    <input type="text" id="taskInput" placeholder="What needs to be done?" />
+    <label>Day</label>
+    <select id="daySelect">
+    </select>
+    <label>Time</label>
+    <select id="timeSelect">
+    </select>
+
+    <label>Remarks</label>
+    <input type="text" id="remarks" placeholder="Any notes? (optional)" />
+    <p id="errorMsg" class="error"></p>
+    <button onclick="addTask()">Add Task</button>
+  </div>
+  <div id="taskArea">
+    <p id="emptyMsg">No tasks yet. Add one above!</p>
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Day</th>
+          <th>Time</th>
+          <th>Remarks</th>
+          <th>Created</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="taskBody"></tbody>
+    </table>
+  </div>
+  <div id="editBox" class="edit-box hidden">
+    <h3>Edit Task</h3>
+    <input type="hidden" id="editId" />
+    <label>Task</label>
+    <input type="text" id="editTask" />
+    <label>Day</label>
+    <select id="editDay"></select>
+    <label>Time</label>
+    <select id="editTime"></select>
+    <label>Remarks</label>
+    <input type="text" id="editRemarks" />
+    <div class="edit-buttons">
+      <button onclick="saveEdit()">Save</button>
+      <button class="cancel-btn" onclick="closeEdit()">Cancel</button>
+    </div>
+  </div>
+  <div id="overlay" class="hidden" onclick="closeEdit()"></div>
+  <script src="script.js"></script>
+</body>
+</html>
